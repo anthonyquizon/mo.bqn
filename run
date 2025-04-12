@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export TIMEFORMAT='%3R'
+FILES=$(find . -name '*.bqn' -o -name '*.tpl')
+
+if [[ "$1" == "--pbqn" ]]; then
+    shift
+    echo "$FILES" | entr -r sh -c "time (pbqn $@)"
+else 
+    echo "$FILES" | entr -r sh -c "time (bqn $@)"
+fi
+
+
