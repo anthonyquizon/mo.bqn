@@ -1,5 +1,6 @@
 
-# TODO namespace to parent
+# idioms
+# (⊣/+`)t=𝕩       get indices of all items of type 𝕩
 
 # t0: none, 
 # tf: fragment
