@@ -2,6 +2,10 @@
 # idioms
 # (⊣/+`)t=𝕩       get indices of all items of type 𝕩
 
+FromNS⇐{
+  𝕩
+}
+
 # t0: none, 
 # tf: fragment
 # tn: name
@@ -33,20 +37,13 @@ Compile⇐{
   {z←(tn⊸=∧»∘=⟜𝕩) t ⋄ r (z/r)⌾((«z)⊸/) ↩ ⋄ c‿t‿r (¬z)⊸/¨↩}¨ts‿tt‿te # compress names into start tag and end references
   c‿t‿r (¬tc=t)⊸/¨↩ #remove close brackets
   d↩ +`(ts⊸=-=⟜te) t # depth vector
-  {mo⇐c‿d‿t‿r‿n}
+  {tpl⇐c‿d‿t‿r‿n}
 }
 
 Render⇐{ 
-    𝕊 ⟨mo⇐mo⟩:
-    •Show "compiled"
-  #c‿d‿t‿r‿n←𝕩.mo
-  # match depths
-  # expand repeats
-  #•SHow d
-  #•SHow t
-  #•SHow r
-  #•SHow c
-;   𝕊 𝕩 : 
-    •Show "not compiled!"
-    𝕊 Compile 𝕩
+  ⟨c‿d‿t‿r‿n⇐tpl⟩ 𝕊 𝕩:
+    •Show n
+; 𝕨 𝕊 𝕩 : (Compile 𝕨) 𝕊 𝕩
 }
+
+RenderNs⇐Render⟜FromNS

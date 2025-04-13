@@ -1,3 +1,3 @@
 mo←•Import "./mo.bqn"
 
-mo.Render "{#as}hi{a}{/as}, {#bs}bye{b}{/bs}"
+"{#as}hi{a}{/as}, {#bs}bye{b}{/bs}" mo.RenderNs {x⇐@} 
