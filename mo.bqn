@@ -51,7 +51,6 @@ Compile⇐{
 }
 
 Render⇐{ 
-  ⟨file⇐file⟩   𝕊 𝕩: (•file.Chars file) 𝕊 𝕩
 ; ⟨c‿d‿t‿n⇐tpl⟩ 𝕊 𝕩: •Show "compiled"
     #←tpl
 ; 𝕨 𝕊 𝕩 : (Compile 𝕨) 𝕊 𝕩
